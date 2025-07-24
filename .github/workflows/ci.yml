@@ -44,8 +44,8 @@ jobs:
       - name: Check server responds
         run: curl -I http://localhost:3000
 
-      - name: Wait for server
-        run: npx wait-on http://localhost:3000 --timeout 10000
+      - name: Wait a moment before testing
+      - run: sleep 2
 
       - name: Run Cypress tests (with reporter)
         run: npx cypress run

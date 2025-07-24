@@ -30,6 +30,9 @@ jobs:
         env:
           CI: true
 
+      - name: Debug — check if server responds
+        run: curl -I http://localhost:3000
+
       - name: Wait for server
         run: npx wait-on http://localhost:3000
 

@@ -45,7 +45,7 @@ jobs:
         run: curl -I http://localhost:3000
 
       - name: Wait a moment before testing
-      - run: sleep 2
+        run: sleep 2
 
       - name: Run Cypress tests (with reporter)
         run: npx cypress run

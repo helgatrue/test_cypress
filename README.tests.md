@@ -63,6 +63,7 @@ After each CI run:
 2. Open the latest workflow run 
 3. Download the artifact named:
    ``cypress-html-report``
+4. Unzip and open the file via browser
 
 It includes a full MochaAwesome HTML report (``mochawesome.html``) showing test results.
 

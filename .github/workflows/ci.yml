@@ -30,11 +30,22 @@ jobs:
         env:
           CI: true
 
-      - name: Debug — check if server responds
+      - name: Debug — show directory contents
+        run: ls -la
+
+      - name: Start static server
+        run: |
+          npx http-server ./ -p 3000 > server.log 2>&1 &
+          sleep 2
+          cat server.log
+        env:
+          CI: true
+
+      - name: Check server responds
         run: curl -I http://localhost:3000
 
       - name: Wait for server
-        run: npx wait-on http://localhost:3000
+        run: npx wait-on http://localhost:3000 --timeout 10000
 
       - name: Run Cypress tests (with reporter)
         run: npx cypress run

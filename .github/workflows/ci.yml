@@ -47,8 +47,8 @@ jobs:
       - name: Wait a moment before testing
         run: sleep 2
 
-      - name: Run Cypress tests (with reporter)
-        run: npx cypress run
+      - name: Run Cypress tests
+        run: npx cypress run --browser chrome
 
       - name: Upload Cypress HTML Report
         if: always()

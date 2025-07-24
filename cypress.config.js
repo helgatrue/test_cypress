@@ -1,19 +1,11 @@
-const { defineConfig } = require("cypress");
+// cypress.config.js
+import { defineConfig } from 'cypress'
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
+    baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
-    },
-    baseUrl: "http://localhost:3000",
-    reporter: "cypress-mochawesome-reporter",
-    reporterOptions: {
-      reportDir: "cypress/reports",
-      reportFilename: "counter-report",
-      charts: true,
-      embeddedScreenshots: true,
-      inlineAssets: true,
-      saveAllAttempts: false,
+      // implement node event listeners here
     },
   },
-});
+})
